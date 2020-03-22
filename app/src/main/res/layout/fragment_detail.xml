@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Main.Detail.DetailFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="8"
+        >
+        <TextView
+            android:textSize="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="District : "
+            android:layout_weight="1"
+            android:id="@+id/district"/>
+        <TextView
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Average female age : "
+            android:id="@+id/female_age"/>
+        <TextView
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Female count : "
+            android:id="@+id/female_count"/>
+        <TextView
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Average male age : "
+            android:id="@+id/male_age"/>
+        <TextView
+            android:layout_weight="1"
+            android:textSize="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Male count : "
+            android:id="@+id/male_count"/>
+        <TextView
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Average rent cost : "
+            android:id="@+id/rent_val"/>
+        <TextView
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Concurrent number : "
+            android:id="@+id/concr"/>
+        <TextView
+            android:textSize="30dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Chance of success : "
+            android:id="@+id/success"/>
+
+    </LinearLayout>
+
+</FrameLayout>
