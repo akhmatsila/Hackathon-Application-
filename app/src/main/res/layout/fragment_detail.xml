@@ -5,70 +5,108 @@
     android:layout_height="match_parent"
     tools:context=".ui.Main.Detail.DetailFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="8"
-        >
+        android:layout_gravity="center"
+        android:gravity="center">
         <TextView
-            android:textSize="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="District : "
-            android:layout_weight="1"
-            android:id="@+id/district"/>
-        <TextView
-            android:textSize="30dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Average female age : "
-            android:id="@+id/female_age"/>
-        <TextView
-            android:textSize="30dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Female count : "
-            android:id="@+id/female_count"/>
-        <TextView
-            android:textSize="30dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Average male age : "
-            android:id="@+id/male_age"/>
-        <TextView
-            android:layout_weight="1"
-            android:textSize="30dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Male count : "
-            android:id="@+id/male_count"/>
-        <TextView
-            android:textSize="30dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Average rent cost : "
-            android:id="@+id/rent_val"/>
-        <TextView
-            android:textSize="30dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Concurrent number : "
-            android:id="@+id/concr"/>
-        <TextView
-            android:textSize="30dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Chance of success : "
-            android:id="@+id/success"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="40dp"
+            android:text="RESULTS : "/>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="8">
+
+            <TextView
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:id="@+id/district"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="District : "
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/female_age"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="Average female age : "
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/female_count"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:text="Female count : "
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/male_age"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:text="Average male age : "
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/male_count"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp"
+                android:text="Male count : "
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/rent_val"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Average rent cost : "
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/concr"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="match_parent"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:text="Concurrent number : "
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/success"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:text="Chance of success : "
+                android:textSize="30dp" />
+
+        </LinearLayout>
     </LinearLayout>
-
 </FrameLayout>

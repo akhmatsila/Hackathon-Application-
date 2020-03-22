@@ -6,10 +6,18 @@
     tools:context=".ui.Auth.AuthFragment.AuthFragment">
 
     <LinearLayout
-
-        android:layout_gravity="center"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:weightSum="20">
+    <LinearLayout
+
+        android:layout_weight="19"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:weightSum="5">
 
@@ -22,34 +30,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/password_input"/>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
+
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:layout_marginRight="40dp"
-                android:text="sign in"
+                android:background="@mipmap/enter"
                 android:textAllCaps="true"
                 android:id="@+id/sign_in"
                 />
 
-            <Button
-                android:layout_marginLeft="40dp"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="register"
-                android:id="@+id/register_button"
-                android:textAllCaps="true"
-                />
 
-        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_button"
+        android:textColor="@color/colorPrimary"
+        android:text="РЕГИСТРАЦИЯ"
+        android:textAllCaps="true"
+        />
     </LinearLayout>
     <RelativeLayout
         android:layout_width="wrap_content"

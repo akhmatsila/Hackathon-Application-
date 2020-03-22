@@ -2,6 +2,7 @@ package com.jsonstatham.hackathonapp.ui.Main.Search
 
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -10,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.core.graphics.alpha
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -140,6 +142,11 @@ class SearchFragment : DaggerFragment(), OnMapReadyCallback {
                 marker.position.longitude.toString()
             )
         }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun setCat(v : View) {
+        bussinesText.text = (v as ImageView).autofillHints[0]!!
     }
 
 

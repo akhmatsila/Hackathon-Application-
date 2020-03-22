@@ -7,6 +7,7 @@
     tools:context=".ui.Main.MainActivity"
     android:id="@+id/drawers_layout"
     android:fitsSystemWindows="true"
+    android:background="@mipmap/mainbackground"
     >
 
     <fragment

@@ -7,10 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -28,7 +25,7 @@ import javax.inject.Inject
  */
 class AuthFragment : DaggerFragment(), View.OnClickListener {
 
-    private lateinit var registerButton: Button
+    private lateinit var registerButton: TextView
     private lateinit var logButton: Button
     private lateinit var navController: NavController
     private lateinit var progressBar: ProgressBar

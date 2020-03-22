@@ -50,6 +50,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:padding="5dp"
             android:id="@+id/coor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,9 +61,10 @@
         </LinearLayout>
 
         <TextView
+            android:background="@drawable/circle_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Shop"
+            android:text="^"
             android:textSize="70dp"
             android:layout_gravity="center"
             android:gravity="center"
@@ -73,7 +75,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Saint-petesburg"
-            android:textSize="40dp"
+            android:textSize="20dp"
+            android:lines="2"
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/address"
@@ -87,25 +90,40 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <ImageView
+                    android:onClick="setCat"
+                    android:background="@drawable/circle"
                     android:layout_width="200dp"
                     android:layout_height="100dp"
-                    android:tooltipText="cafe"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:autofillHints="Pub"
+                    android:src="@mipmap/beer"/>
+                <ImageView
+                    android:onClick="setCat"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:autofillHints="Restaurant"
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/burger"/>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:onClick="setCat"
+                    android:layout_height="100dp"
+                    android:autofillHints="Cafe"
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/cafe"/>
                 <ImageView
                     android:layout_width="200dp"
                     android:layout_height="100dp"
-                    android:tooltipText="restaraunt"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:onClick="setCat"
+                    android:autofillHints="Car wash"
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/carwash"/>
                 <ImageView
                     android:layout_width="200dp"
+                    android:onClick="setCat"
                     android:layout_height="100dp"
-                    android:tooltipText="fitness"
-                    android:src="@mipmap/ic_launcher"/>
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
-                    android:tooltipText="car wash"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:autofillHints="Shop"
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/market"/>
 
             </LinearLayout>
 
@@ -113,8 +131,9 @@
         <Button
             android:id="@+id/analyze_button"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="Analyze" />
+            android:layout_height="60dp"
+            android:text="Analyze"
+            android:background="@color/paleGreen"/>
 
     </LinearLayout>
 

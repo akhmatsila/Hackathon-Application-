@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     tools:context=".ui.Auth.AuthActivity"
-    android:id="@+id/auth_canvas">
+    android:id="@+id/auth_canvas"
+    android:background="@mipmap/mainbackground">
 
 
     <fragment
