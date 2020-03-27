@@ -17,16 +17,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center">
+
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <ProgressBar
                 android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                style="@style/Widget.AppCompat.ProgressBar"
-                android:visibility="gone"/>
+                android:visibility="gone" />
         </RelativeLayout>
 
         <LinearLayout
@@ -50,90 +51,96 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:padding="5dp"
             android:id="@+id/coor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:padding="5dp"
             android:weightSum="2">
 
 
         </LinearLayout>
 
         <TextView
-            android:background="@drawable/circle_top"
+            android:id="@+id/bussiness_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="^"
-            android:textSize="70dp"
             android:layout_gravity="center"
+            android:background="@drawable/circle_top"
             android:gravity="center"
-            android:id="@+id/bussiness_type"
-            />
+            android:text="Pub"
+            android:textSize="70dp" />
 
         <TextView
+            android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Saint-petesburg"
-            android:textSize="20dp"
-            android:lines="2"
             android:layout_gravity="center"
             android:gravity="center"
-            android:id="@+id/address"
-            />
+            android:lines="2"
+            android:text="Saint-petesburg"
+            android:textSize="20dp" />
+
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/pseudo_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <ImageView
-                    android:onClick="setCat"
-                    android:background="@drawable/circle"
                     android:layout_width="200dp"
                     android:layout_height="100dp"
                     android:autofillHints="Pub"
-                    android:src="@mipmap/beer"/>
+                    android:background="@drawable/circle"
+                    android:src="@mipmap/beer"
+                    android:tag="Pub" />
+
                 <ImageView
-                    android:onClick="setCat"
                     android:layout_width="200dp"
                     android:layout_height="100dp"
                     android:autofillHints="Restaurant"
                     android:background="@drawable/circle"
-                    android:src="@mipmap/burger"/>
+                    android:src="@mipmap/burger"
+                    android:tag="Restaurant" />
+
                 <ImageView
                     android:layout_width="200dp"
-                    android:onClick="setCat"
                     android:layout_height="100dp"
                     android:autofillHints="Cafe"
                     android:background="@drawable/circle"
-                    android:src="@mipmap/cafe"/>
+                    android:src="@mipmap/cafe"
+                    android:tag="Cafe" />
+
                 <ImageView
+                    android:tag="Car wash"
                     android:layout_width="200dp"
                     android:layout_height="100dp"
-                    android:onClick="setCat"
                     android:autofillHints="Car wash"
                     android:background="@drawable/circle"
-                    android:src="@mipmap/carwash"/>
+                    android:src="@mipmap/carwash" />
+
                 <ImageView
+                    android:tag="Shop"
                     android:layout_width="200dp"
-                    android:onClick="setCat"
                     android:layout_height="100dp"
                     android:autofillHints="Shop"
                     android:background="@drawable/circle"
-                    android:src="@mipmap/market"/>
+                    android:src="@mipmap/market" />
 
             </LinearLayout>
 
         </HorizontalScrollView>
+
         <Button
             android:id="@+id/analyze_button"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="Analyze"
-            android:background="@color/paleGreen"/>
+            android:background="@color/paleGreen"
+            android:text="Analyze" />
 
     </LinearLayout>
 

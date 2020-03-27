@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.graphics.alpha
+import androidx.core.view.children
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
@@ -40,6 +41,7 @@ class SearchFragment : DaggerFragment(), OnMapReadyCallback {
     private lateinit var marker: Marker
     private lateinit var adressText: TextView
     private lateinit var progressBar: ProgressBar
+    private lateinit var linearLayout: LinearLayout
 
 
     @Inject
@@ -61,6 +63,7 @@ class SearchFragment : DaggerFragment(), OnMapReadyCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        linearLayout = view.findViewById(R.id.pseudo_list)
         processButton = view.findViewById(R.id.analyze_button)
         bussinesText = view.findViewById(R.id.bussiness_type)
         navController = view.findNavController()
@@ -115,7 +118,14 @@ class SearchFragment : DaggerFragment(), OnMapReadyCallback {
             viewModel.getZoneAnalytics(
                 marker.position.latitude.toString(),
                 marker.position.longitude.toString(),
-                bussinesText.text.toString().toLowerCase(Locale.getDefault()))
+                bussinesText.text.toString().toLowerCase(Locale.getDefault())
+            )
+        }
+
+        linearLayout.children.forEach {
+            it.setOnClickListener {
+                bussinesText.text = it.tag.toString()
+            }
         }
 
     }
@@ -142,11 +152,6 @@ class SearchFragment : DaggerFragment(), OnMapReadyCallback {
                 marker.position.longitude.toString()
             )
         }
-    }
-
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun setCat(v : View) {
-        bussinesText.text = (v as ImageView).autofillHints[0]!!
     }
 
 

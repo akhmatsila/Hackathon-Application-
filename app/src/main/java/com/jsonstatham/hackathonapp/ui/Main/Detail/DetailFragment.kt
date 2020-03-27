@@ -7,6 +7,8 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
@@ -25,19 +27,19 @@ import javax.inject.Inject
 class DetailFragment : DaggerFragment() {
 
     @Inject
-    lateinit var data : LiveData<ProcessionData<ZoneAnalyzis>>
+    lateinit var data: LiveData<ProcessionData<ZoneAnalyzis>>
 
     @Inject
     lateinit var factory: ViewModelProvider.Factory
 
     private lateinit var district: TextView
-    private lateinit var femaleCount : TextView
-    private lateinit var femaleAge : TextView
-    private lateinit var maleCount : TextView
-    private lateinit var maleAge : TextView
-    private lateinit var rentCost : TextView
-    private lateinit var concurrent : TextView
-    private lateinit var chance : TextView
+    private lateinit var femaleCount: TextView
+    private lateinit var femaleAge: TextView
+    private lateinit var maleCount: TextView
+    private lateinit var maleAge: TextView
+    private lateinit var rentCost: TextView
+    private lateinit var concurrent: TextView
+    private lateinit var chance: TextView
     private lateinit var navController: NavController
 
     override fun onCreateView(
@@ -48,16 +50,6 @@ class DetailFragment : DaggerFragment() {
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            android.R.id.home -> {
-
-                navController.navigate(R.id.action_detailFragment_to_searchFragment)
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -71,12 +63,23 @@ class DetailFragment : DaggerFragment() {
         concurrent = view.findViewById(R.id.concr)
         chance = view.findViewById(R.id.success)
 
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    navController.popBackStack()
+                }
+
+            })
+
         initFields()
 
     }
+
     private fun initFields() {
         district.text = district.text.toString() + (data.value?.data?.dis_name ?: "no data")
-        femaleCount.text = femaleCount.text.toString() + (data.value?.data?.female_count ?: "no data")
+        femaleCount.text =
+            femaleCount.text.toString() + (data.value?.data?.female_count ?: "no data")
         femaleAge.text = femaleAge.text.toString() + (data.value?.data?.female_age ?: "no data")
         maleAge.text = maleAge.text.toString() + (data.value?.data?.male_age ?: "no data")
         maleCount.text = maleCount.text.toString() + (data.value?.data?.male_count ?: "no data")
@@ -84,8 +87,6 @@ class DetailFragment : DaggerFragment() {
         concurrent.text = concurrent.text.toString() + (data.value?.data?.item_count ?: "no data")
         chance.text = chance.text.toString() + (data.value?.data?.koeff ?: "no data")
     }
-
-
 
 
 }

@@ -3,6 +3,7 @@ package com.jsonstatham.hackathonapp.ui.Main
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.core.view.GravityCompat
+import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -75,5 +76,6 @@ class MainActivity : DaggerAppCompatActivity() , NavigationView.OnNavigationItem
         }
         return super.onOptionsItemSelected(item)
     }
+
 
 }

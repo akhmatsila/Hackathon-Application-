@@ -18,7 +18,7 @@ class SplashActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_activity)
         Handler().postDelayed({
-            var i : Intent
+            lateinit var i : Intent
             if (manager.authStatus.value?.status == Status.LOGIN) i = Intent(this,MainActivity::class.java)
             else i = Intent(this,AuthActivity::class.java)
             startActivity(i)
